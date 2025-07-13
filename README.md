@@ -1,22 +1,18 @@
-# Welcome to your Lovable project
+# Lerion Study Portal
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/673c4a6c-b246-425c-ad1e-b2b03ba04416
+
 
 ## How can I edit this code?
 
 There are several ways of editing your application.
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/673c4a6c-b246-425c-ad1e-b2b03ba04416) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
+You can work locally with your preferred IDE or edit files directly in GitHub.
 
 **Use your preferred IDE**
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Clone this repo and push changes when you're ready.
 
 The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
@@ -62,12 +58,20 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/673c4a6c-b246-425c-ad1e-b2b03ba04416) and click on Share -> Publish.
+Deploy the project using your preferred hosting service.
+## Running the PHP exam locally
 
-## Can I connect a custom domain to my Lovable project?
+Navigate to the `php_exam` folder and start PHP's built-in server:
 
-Yes, you can!
+```sh
+php -S localhost:8000
+```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Then open [http://localhost:8000/exam.php](http://localhost:8000/exam.php) in your browser. The timer automatically submits each section when time expires.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+
+
+
+## PHP Exam Demo
+
+A basic PHP-based exam interface is provided under `php_exam/`. It loads questions from JSON files and supports a 30 minute objective section and 40 minute theory section. Deploy the contents of this folder to any PHP-enabled host (e.g. cPanel) and open `exam.php` in a browser to begin.

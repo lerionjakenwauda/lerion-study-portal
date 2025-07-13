@@ -1,0 +1,76 @@
+[
+  {
+    "id": 1,
+    "question": "Construct a dichotomous key to separate an unknown microbe into one of the three kingdoms: Bacteria, Fungi, or Protista using at least FOUR diagnostic structural or biochemical traits.",
+    "keyPoints": [
+      "Cells nucleated? – Yes → proceed to 2 | No → Bacteria",
+      "Cell wall of chitin & absorptive heterotrophy? – Yes → Fungi. No → proceed to 3",
+      "Predominantly unicellular, varied nutrition, often motile? – Yes → Protista",
+      "Diagnostic traits explained: peptidoglycan vs chitin vs cellulose; organelles; nutrition"
+    ],
+    "maxMarks": 6
+  },
+  {
+    "id": 2,
+    "question": "Explain the principle and procedural steps of the Gram stain, and discuss how differential staining guides antibiotic choice in clinical microbiology.",
+    "keyPoints": [
+      "Fix smear → heat or methanol",
+      "Flood with crystal-violet (primary dye)",
+      "Add Gram's iodine (mordant) → CV-I complex",
+      "Decolourise (95% ethanol/acetone): dissolves lipids, shrinks thick Gram + wall",
+      "Counter-stain safranin/fuchsin → Gram – pink",
+      "Gram + (e.g., Staph.) → thick PG; β-lactams, vancomycin effective",
+      "Gram – outer membrane + LPS → need β-lactamase-stable drugs or aminoglycosides"
+    ],
+    "maxMarks": 7
+  },
+  {
+    "id": 3,
+    "question": "With annotated diagrams, outline the alternation of generations in a typical fern (Pteridophyte), indicating ploidy levels at each stage.",
+    "keyPoints": [
+      "Sporophyte (2n) → sporangia → meiosis → haploid spores (n)",
+      "Heart-shaped prothallus (gametophyte)",
+      "Antheridia & archegonia → zygote (2n) stays on prothallus",
+      "Young sporophyte with first fronds & rhizome",
+      "Diagram showing complete cycle with ploidy levels marked"
+    ],
+    "maxMarks": 6
+  },
+  {
+    "id": 4,
+    "question": "Compare radial symmetry in Cnidaria with bilateral symmetry in Platyhelminthes in terms of lifestyle, cephalisation, and evolutionary implications.",
+    "keyPoints": [
+      "Radial (Cnidaria): Sessile/drifting lifestyle, absent cephalisation, gastrovascular cavity",
+      "Bilateral (Platyhelminthes): Active directional movement, concentrated sense organs anteriorly, blind but central gut",
+      "Radial allows equal response to stimuli 360°",
+      "Bilateral favours cephalisation & organ systems",
+      "Evolutionary implications for body plan development"
+    ],
+    "maxMarks": 6
+  },
+  {
+    "id": 5,
+    "question": "Describe the structure of the mammalian nephron and explain the counter-current multiplier mechanism that concentrates urine.",
+    "keyPoints": [
+      "Structure: Bowman's capsule → PCT → Loop of Henle (descending thin, ascending thick) → DCT → collecting duct",
+      "Ascending limb pumps Na⁺Cl⁻ out (impermeable to water) → medulla hyper-osmotic",
+      "Descending limb loses water to hyper-medulla",
+      "Multiplies gradient → collecting duct reabsorbs water under ADH",
+      "Results in concentrated urine production"
+    ],
+    "maxMarks": 7
+  },
+  {
+    "id": 6,
+    "question": "Explain primary and secondary growth in woody dicots, emphasising the activities of apical meristems, vascular cambium, and cork cambium, and relate these to annual ring formation.",
+    "keyPoints": [
+      "Primary (length): apical meristems produce protoderm, procambium, ground meristem",
+      "Tissues differentiate into epidermis, primary xylem/phloem, cortex",
+      "Vascular cambium adds secondary xylem (wood) inwards, secondary phloem outwards",
+      "Annual rings (earlywood vs latewood)",
+      "Cork cambium (phellogen) generates phellem (cork) and phelloderm → forms bark",
+      "Advantages: mechanical support, conduction capacity"
+    ],
+    "maxMarks": 9
+  }
+]
