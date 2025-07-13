@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { examData, examConfig } from '@/data/examData';
+import { examQuestionPool, getRandomQuestions, examConfig } from '@/data/examData';
 import { ExamTimer } from '@/components/ExamTimer';
 import { QuestionCard } from '@/components/QuestionCard';
 import { QuestionNavigation } from '@/components/QuestionNavigation';
@@ -11,18 +11,21 @@ import { ChevronLeft, ChevronRight, CheckCircle2, Play } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 export default function Exam() {
-  const [examState, setExamState] = useState<'instructions' | 'active' | 'completed'>('instructions');
+  const [examState, setExamState] = useState<'instructions' | 'cbt' | 'theory' | 'completed'>('instructions');
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [userAnswers, setUserAnswers] = useState<Record<number, 'A' | 'B' | 'C' | 'D'>>({});
+  const [examQuestions, setExamQuestions] = useState<Question[]>([]);
   const [startTime, setStartTime] = useState<number>(0);
   const [endTime, setEndTime] = useState<number>(0);
   const { toast } = useToast();
 
-  const currentQuestion = examData[currentQuestionIndex];
+  const currentQuestion = examQuestions[currentQuestionIndex];
   const answeredQuestions = new Set(Object.keys(userAnswers).map(Number));
 
   const startExam = () => {
-    setExamState('active');
+    const questions = getRandomQuestions(60);
+    setExamQuestions(questions);
+    setExamState('cbt');
     setStartTime(Date.now());
   };
 
@@ -61,7 +64,7 @@ export default function Exam() {
   };
 
   const goToNext = () => {
-    if (currentQuestionIndex < examData.length - 1) {
+    if (currentQuestionIndex < examQuestions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     }
   };
@@ -69,7 +72,7 @@ export default function Exam() {
   const retakeExam = () => {
     setExamState('instructions');
     setCurrentQuestionIndex(0);
-    setUserAnswers({});
+    setExamQuestions([]);
     setStartTime(0);
     setEndTime(0);
   };
@@ -86,7 +89,7 @@ export default function Exam() {
               {examConfig.title}
             </CardTitle>
             <Badge variant="outline" className="mx-auto">
-              {examConfig.totalQuestions} Questions • {examConfig.duration} Minutes
+              {examConfig.totalQuestions} Questions • {examConfig.cbtDuration} + {examConfig.theoryDuration} Minutes
             </Badge>
           </CardHeader>
           
@@ -130,7 +133,7 @@ export default function Exam() {
     const timeSpent = Math.floor((endTime - startTime) / 1000);
     return (
       <ExamResults 
-        questions={examData}
+        questions={examQuestions}
         userAnswers={userAnswers}
         timeSpent={timeSpent}
         onRetakeExam={retakeExam}
@@ -153,9 +156,9 @@ export default function Exam() {
               </p>
             </div>
             <ExamTimer 
-              duration={examConfig.duration}
+              duration={examConfig.cbtDuration}
               onTimeUp={handleTimeUp}
-              isActive={examState === 'active'}
+              isActive={examState === 'cbt'}
             />
           </div>
         </div>
@@ -200,7 +203,7 @@ export default function Exam() {
                   {answeredQuestions.size} of {examConfig.totalQuestions} answered
                 </div>
 
-                {currentQuestionIndex === examData.length - 1 ? (
+                {currentQuestionIndex === examQuestions.length - 1 ? (
                   <Button 
                     onClick={submitExam}
                     className="bg-gradient-to-r from-accent to-success hover:from-accent/90 hover:to-success/90"

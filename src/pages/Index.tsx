@@ -63,7 +63,7 @@ const Index = () => {
               <CardTitle className="text-lg">Duration</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-accent">{examConfig.duration}</div>
+              <div className="text-2xl font-bold text-accent">{examConfig.cbtDuration + examConfig.theoryDuration}</div>
               <p className="text-sm text-muted-foreground">Minutes</p>
             </CardContent>
           </Card>
